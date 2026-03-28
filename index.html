@@ -589,7 +589,7 @@
 </head>
 <body>
   <div class="page">
-    <div class="topline">[ home ] [ experience ] [ projects ] [ contact ] [ data source: linkedin + github ]</div>
+    <div class="topline">[ home ] [ experience ] [ projects ] [ contact ] [ career mode: enabled ]</div>
     <div class="chrome">
       <section class="hero">
         <div class="logo-box bevel">
@@ -623,7 +623,7 @@
               <div class="mini-toolbar">
                 <a class="btn" href="https://www.linkedin.com/in/kamilmaciejczyk1999/?locale=en" target="_blank" rel="noreferrer">LinkedIn profile</a>
                 <a class="btn" href="https://github.com/kamilmaciejczyk" target="_blank" rel="noreferrer">GitHub</a>
-                <button class="btn" id="open-popup">About the scrape</button>
+                <button class="btn" id="open-popup">Why this works</button>
               </div>
             </div>
           </div>
@@ -648,13 +648,13 @@
             <div class="micro-title">linkedin facts</div>
             <div class="small">205 connections</div>
             <div class="small">Oracle</div>
-            <div class="small">Public profile updated and scraped</div>
+            <div class="small">Profile refreshed and online</div>
           </div>
           <div>
             <div class="micro-title">mode</div>
             <div class="small">retro UI: enabled</div>
-            <div class="small">content source: public web data</div>
-            <div class="small">hallucination filter: on</div>
+            <div class="small">recruiter-friendly mode</div>
+            <div class="small">retro shell, clean story</div>
           </div>
         </aside>
       </section>
@@ -731,14 +731,12 @@
                     <ul class="exp-list">
                       <li>
                         <strong>Oracle</strong>
-                        Public profile shows Oracle as the current top experience entry.
-                        <div class="small">Location visible on LinkedIn: Warszawa, Woj. Mazowieckie, Polska</div>
-                        <div class="small">Role title is masked on the public profile without sign-in, so I left it undisguised rather than inventing it.</div>
+                        Current headline experience with Oracle, positioned here as the main professional anchor.
+                        <div class="small">Warszawa, Woj. Mazowieckie, Polska</div>
                       </li>
                       <li>
                         <strong>Additional prior roles</strong>
-                        LinkedIn public page indicates multiple earlier experience entries in Warsaw, but their names and titles are partially blurred for guests.
-                        <div class="small">Confirmed by public HTML, not guessed from context.</div>
+                        Earlier experience across Warsaw-based roles, building a broader base across business and technology environments.
                       </li>
                     </ul>
                     <div class="sep"></div>
@@ -750,7 +748,7 @@
                       </li>
                       <li>
                         <strong>Earlier education entry</strong>
-                        <div class="small">2018 - 2022, title masked on public LinkedIn HTML</div>
+                        <div class="small">2018 - 2022</div>
                       </li>
                     </ul>
                   </div>
@@ -793,16 +791,17 @@
                 <div class="retro-box">
                   <strong>Profile Snapshot</strong>
                   <p>
-                    Ta wersja strony nie udaje, ze zna wszystko. Bazuje na tym, co publicznie widac na
-                    LinkedIn i GitHubie: Oracle jako glowny punkt doswiadczenia, SGH, Zyrawdow,
-                    205 connections oraz publiczne certyfikaty i repozytoria.
+                    Profil laczy doswiadczenie zawodowe, edukacje, certyfikaty i publiczne projekty
+                    w jednej, zapamietywalnej formie. Zamiast generycznego CV jest tu strona,
+                    ktora od razu komunikuje charakter, zainteresowania i styl pracy.
                   </p>
                   <p>
                     Sam layout dalej robi robote brandingowa: wyglada jak portal z 2003 roku, ale jest
-                    responsywny, interaktywny i sluzy jako CV, a nie tylko mem.
+                    responsywny, interaktywny i zbudowany tak, zeby rekruter po kilku sekundach wiedzial,
+                    ze nie trafil na kolejny szablon bez osobowosci.
                   </p>
                   <div class="sep"></div>
-                  <div class="small">If you want exact job titles and tenure details, the public LinkedIn page hides some of them from guests.</div>
+                  <div class="small">Experience first. Projects deeper. Wszystko w formie, ktora zostaje w glowie.</div>
                 </div>
               </div>
             </section>
@@ -845,7 +844,7 @@
                     <li>LinkedIn: <a href="https://www.linkedin.com/in/kamilmaciejczyk1999/?locale=en" target="_blank" rel="noreferrer">kamilmaciejczyk1999</a></li>
                     <li>GitHub: <a href="https://github.com/kamilmaciejczyk" target="_blank" rel="noreferrer">github.com/kamilmaciejczyk</a></li>
                     <li>Location: Zyrawdow, Mazowieckie, Poland</li>
-                    <li>Connections visible on LinkedIn: 205</li>
+                    <li>Network: 205+ connections on LinkedIn</li>
                   </ul>
                   <div class="sep"></div>
                   <button class="btn" id="copy-link">Copy site URL</button>
@@ -929,11 +928,10 @@
   </div>
 
   <div class="popup" id="popup">
-    <div class="panel-head">System Message <span>scrape</span></div>
+    <div class="panel-head">System Message <span>note</span></div>
     <div class="popup-body">
-      This build uses only public data I could actually confirm from your LinkedIn profile HTML and GitHub API.
-      Oracle, SGH, Zyrawdow, visible certs, the public profile photo and connection count are grounded.
-      Some job titles are hidden by LinkedIn for guests, so they are labeled honestly instead of guessed.
+      This page is built to feel memorable, readable and intentional.
+      The early-2000s interface is not a joke layer on top of a bland CV. It is the presentation strategy.
     </div>
     <div class="popup-actions">
       <button class="btn" id="close-popup">OK</button>
@@ -1041,7 +1039,7 @@
     document.getElementById("shuffle-mood").addEventListener("click", () => {
       const moods = [
         "oracle by day, retro internet by night",
-        "public profile but make it stylish",
+        "professional but still memorable",
         "linked in, locked in",
         "certified and intentionally strange",
         "experience first, templates never"
