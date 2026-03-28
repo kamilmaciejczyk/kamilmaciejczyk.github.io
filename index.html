@@ -3,53 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kamil Maciejczyk // CV 2003 Edition</title>
+  <title>Kamil Maciejczyk // LinkedIn CV 2003 Edition</title>
   <meta
     name="description"
-    content="Interaktywne CV Kamila Maciejczyka zrobione w estetyce wczesnych lat 2000: old-web UI, draggable windows, projekty z GitHuba i celowo retro klimat."
+    content="Interaktywne CV Kamila Maciejczyka w estetyce wczesnych lat 2000, oparte o publiczne dane z LinkedIn i GitHuba."
   >
   <style>
     :root {
-      --bg: #6b786e;
-      --bg-2: #a1a79d;
       --panel: #c5cabd;
-      --panel-2: #b3b9ab;
-      --line: #697267;
+      --panel-dark: #8e978b;
+      --panel-soft: #dce1d7;
+      --ink: #182018;
+      --line: #677165;
       --line-strong: #4f584f;
-      --ink: #1d241f;
-      --link: #223a72;
+      --link: #21396c;
       --accent: #8b4e35;
-      --accent-2: #cc8f2e;
-      --good: #3d6e3d;
-      --bad: #742f2f;
-      --shadow: rgba(26, 31, 27, 0.35);
+      --bg-shadow: rgba(28, 34, 29, 0.34);
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: "Trebuchet MS", Verdana, sans-serif;
       color: var(--ink);
+      font-family: "Trebuchet MS", Verdana, sans-serif;
       background:
-        linear-gradient(rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.1)),
-        radial-gradient(circle at top left, rgba(255, 255, 255, 0.3), transparent 26%),
-        repeating-linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.04) 0,
-          rgba(255, 255, 255, 0.04) 14px,
-          rgba(0, 0, 0, 0.025) 14px,
-          rgba(0, 0, 0, 0.025) 28px
-        ),
-        linear-gradient(180deg, #7c877d 0%, #647166 100%);
-      position: relative;
+        linear-gradient(rgba(255,255,255,.08), rgba(0,0,0,.09)),
+        radial-gradient(circle at top left, rgba(255,255,255,.22), transparent 30%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0, rgba(255,255,255,.05) 14px, rgba(0,0,0,.03) 14px, rgba(0,0,0,.03) 28px),
+        linear-gradient(180deg, #7a857b 0%, #667166 100%);
       overflow-x: hidden;
     }
 
@@ -60,25 +44,20 @@
       pointer-events: none;
       opacity: 0.08;
       background-image:
-        linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.14) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,.22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.12) 1px, transparent 1px);
       background-size: 3px 3px, 5px 5px;
       mix-blend-mode: multiply;
     }
 
-    a {
-      color: var(--link);
-    }
+    a { color: var(--link); }
 
     .page {
       width: min(1180px, calc(100vw - 24px));
       margin: 18px auto;
-      background: rgba(199, 205, 194, 0.94);
-      border: 1px solid #e6eadf;
-      box-shadow:
-        0 0 0 1px #5a6257,
-        0 14px 40px var(--shadow);
-      position: relative;
+      background: rgba(199, 205, 194, 0.95);
+      border: 1px solid #e9ece5;
+      box-shadow: 0 0 0 1px #596257, 0 16px 42px var(--bg-shadow);
     }
 
     .topline,
@@ -86,9 +65,9 @@
       padding: 6px 12px;
       text-align: center;
       font-size: 11px;
-      background: linear-gradient(180deg, #a9b0a2, #8c9588);
-      border-bottom: 1px solid var(--line-strong);
       letter-spacing: 0.04em;
+      background: linear-gradient(180deg, #aab0a3, #8d9589);
+      border-bottom: 1px solid var(--line-strong);
     }
 
     .footerline {
@@ -98,58 +77,44 @@
 
     .chrome {
       padding: 10px;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.15), transparent 28%),
-        var(--panel);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 260px 1fr 210px;
-      gap: 10px;
-      align-items: stretch;
+      background: linear-gradient(180deg, rgba(255,255,255,.16), transparent 26%), var(--panel);
     }
 
     .bevel {
       background: var(--panel);
       border-top: 1px solid #edf1e8;
       border-left: 1px solid #edf1e8;
-      border-right: 1px solid #677165;
-      border-bottom: 1px solid #677165;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.18);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 250px 1fr 210px;
+      gap: 10px;
+      align-items: stretch;
     }
 
     .logo-box {
       min-height: 120px;
       padding: 12px;
-      position: relative;
       overflow: hidden;
       background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent 35%),
-        repeating-linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.09) 0,
-          rgba(255, 255, 255, 0.09) 14px,
-          rgba(0, 0, 0, 0.03) 14px,
-          rgba(0, 0, 0, 0.03) 28px
-        ),
+        linear-gradient(135deg, rgba(255,255,255,.2), transparent 35%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.08) 0, rgba(255,255,255,.08) 14px, rgba(0,0,0,.03) 14px, rgba(0,0,0,.03) 28px),
         linear-gradient(180deg, #a7afa1, #8d978b);
     }
 
     .logo-script {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 52px;
-      line-height: 0.9;
-      font-weight: 700;
+      font: 700 50px/0.9 Georgia, "Times New Roman", serif;
       letter-spacing: -0.06em;
-      text-shadow:
-        2px 2px 0 #dde1d7,
-        4px 4px 0 rgba(40, 48, 41, 0.25);
+      text-shadow: 2px 2px 0 #dde1d7, 4px 4px 0 rgba(40,48,41,.25);
     }
 
     .logo-sub {
-      font-size: 12px;
       margin-top: 10px;
+      font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.24em;
     }
@@ -171,27 +136,28 @@
       font-size: 11px;
     }
 
-    .tab,
     .btn,
-    .pill,
-    .select {
-      border-top: 1px solid #f0f3ea;
-      border-left: 1px solid #f0f3ea;
-      border-right: 1px solid #636b60;
-      border-bottom: 1px solid #636b60;
-      background: linear-gradient(180deg, #d6dbd0, #b2b8ac);
-      color: var(--ink);
+    .tab,
+    .control {
       font: inherit;
-      padding: 4px 8px;
+      color: var(--ink);
       cursor: pointer;
       text-decoration: none;
+      border-top: 1px solid #f0f3ea;
+      border-left: 1px solid #f0f3ea;
+      border-right: 1px solid #626b5f;
+      border-bottom: 1px solid #626b5f;
+      background: linear-gradient(180deg, #d6dbd0, #b2b8ac);
     }
+
+    .btn,
+    .tab { padding: 4px 8px; }
 
     .tab.active,
     .btn:active,
-    .select:focus {
-      border-top-color: #636b60;
-      border-left-color: #636b60;
+    .control:active {
+      border-top-color: #626b5f;
+      border-left-color: #626b5f;
       border-right-color: #f0f3ea;
       border-bottom-color: #f0f3ea;
       background: linear-gradient(180deg, #adb4a7, #d6dbd0);
@@ -201,10 +167,9 @@
       display: grid;
       grid-template-columns: 156px 1fr;
       gap: 12px;
-      align-items: start;
       padding: 10px;
-      background: rgba(238, 241, 233, 0.42);
-      border: 1px solid rgba(88, 96, 88, 0.25);
+      background: rgba(238,241,233,.42);
+      border: 1px solid rgba(88,96,88,.25);
     }
 
     .avatar-shell {
@@ -218,15 +183,13 @@
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      filter: contrast(1.05) saturate(0.88) sepia(0.12);
+      filter: contrast(1.03) saturate(.92) sepia(.08);
       background: #aab1a4;
     }
 
     .hero-copy h1 {
       margin: 0;
-      font-size: clamp(28px, 4vw, 46px);
-      line-height: 0.95;
-      font-family: Georgia, "Times New Roman", serif;
+      font: 700 clamp(28px, 4vw, 46px)/0.95 Georgia, "Times New Roman", serif;
       letter-spacing: -0.05em;
     }
 
@@ -264,27 +227,23 @@
     }
 
     .micro-title {
+      margin-bottom: 6px;
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      margin-bottom: 6px;
       color: #334034;
     }
 
-    .counter {
-      display: inline-flex;
-      gap: 2px;
-    }
+    .counter { display: inline-flex; gap: 2px; }
 
     .counter span {
       width: 18px;
       height: 22px;
       display: grid;
       place-items: center;
-      font-family: "Courier New", monospace;
-      font-weight: 700;
+      font: 700 14px "Courier New", monospace;
       color: #daf8d5;
-      background: #1a211a;
+      background: #1b221b;
       border: 1px solid #475247;
     }
 
@@ -303,30 +262,32 @@
 
     .panel-head {
       padding: 6px 8px;
-      font-size: 12px;
-      font-weight: 700;
-      color: #eef2e8;
-      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
-      background: linear-gradient(90deg, #647360, #8a9587);
-      border-bottom: 1px solid #4d574c;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #eef2e8;
+      text-shadow: 1px 1px 0 rgba(0,0,0,.25);
+      background: linear-gradient(90deg, #647360, #8a9587);
+      border-bottom: 1px solid #4d574c;
     }
 
     .panel-body {
       padding: 10px;
       font-size: 13px;
       line-height: 1.45;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 30%);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), transparent 30%);
     }
 
     .nav-list,
     .mini-list,
-    .timeline,
     .facts,
-    .project-list,
-    .stack-list {
+    .repo-feed,
+    .timeline,
+    .stack-list,
+    .exp-list,
+    .cert-list {
       list-style: none;
       padding: 0;
       margin: 0;
@@ -335,10 +296,12 @@
     .nav-list li,
     .mini-list li,
     .facts li,
-    .project-list li,
-    .stack-list li {
-      border-bottom: 1px dashed rgba(83, 91, 83, 0.35);
+    .repo-feed li,
+    .stack-list li,
+    .exp-list li,
+    .cert-list li {
       padding: 6px 0;
+      border-bottom: 1px dashed rgba(83,91,83,.35);
     }
 
     .nav-list a {
@@ -357,10 +320,8 @@
 
     .window-space {
       position: relative;
-      min-height: 860px;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 25%),
-        linear-gradient(180deg, #bec4b8, #a8afa2);
+      min-height: 1020px;
+      background: linear-gradient(180deg, rgba(255,255,255,.18), transparent 25%), linear-gradient(180deg, #bec4b8, #a8afa2);
       border: 1px solid #7d877b;
       overflow: hidden;
     }
@@ -383,42 +344,39 @@
     }
 
     .desktop-icon .box {
+      position: relative;
       width: 38px;
       height: 38px;
       margin: 0 auto 4px;
       background: linear-gradient(180deg, #d9c66a, #ae8732);
       border: 1px solid #6b5520;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
-      position: relative;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.22);
     }
 
     .desktop-icon .box::after {
       content: "";
       position: absolute;
       inset: 7px;
-      border: 1px solid rgba(255, 255, 255, 0.35);
+      border: 1px solid rgba(255,255,255,.35);
     }
 
     .window {
       position: absolute;
-      width: min(520px, calc(100% - 40px));
+      width: min(560px, calc(100% - 40px));
       background: #cfd4c8;
       border-top: 1px solid #f0f2ec;
       border-left: 1px solid #f0f2ec;
       border-right: 1px solid #5a6358;
       border-bottom: 1px solid #5a6358;
-      box-shadow: 6px 6px 0 rgba(44, 50, 43, 0.22);
+      box-shadow: 6px 6px 0 rgba(44,50,43,.22);
       user-select: none;
     }
 
-    .window.hidden {
-      display: none;
-    }
-
-    .window[data-window="about"] { top: 34px; left: 86px; }
-    .window[data-window="projects"] { top: 290px; left: 160px; width: min(560px, calc(100% - 40px)); }
-    .window[data-window="timeline"] { top: 118px; right: 18px; width: min(380px, calc(100% - 40px)); }
-    .window[data-window="contact"] { top: 540px; right: 38px; width: min(360px, calc(100% - 40px)); }
+    .window.hidden { display: none; }
+    .window[data-window="experience"] { top: 34px; left: 88px; width: min(600px, calc(100% - 40px)); }
+    .window[data-window="about"] { top: 298px; left: 126px; width: min(520px, calc(100% - 40px)); }
+    .window[data-window="projects"] { top: 94px; right: 16px; width: min(430px, calc(100% - 40px)); }
+    .window[data-window="contact"] { top: 676px; right: 32px; width: min(360px, calc(100% - 40px)); }
 
     .titlebar {
       display: flex;
@@ -430,28 +388,17 @@
       color: #f4f6f1;
       font-size: 12px;
       font-weight: 700;
+      text-shadow: 1px 1px 0 rgba(0,0,0,.25);
       cursor: grab;
-      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
     }
 
-    .titlebar-controls {
-      display: flex;
-      gap: 4px;
-      flex-shrink: 0;
-    }
+    .titlebar-controls { display: flex; gap: 4px; }
 
     .control {
       width: 18px;
       height: 18px;
       padding: 0;
-      border-top: 1px solid #f6f7f3;
-      border-left: 1px solid #f6f7f3;
-      border-right: 1px solid #52604f;
-      border-bottom: 1px solid #52604f;
-      background: #c8cebf;
-      color: #223022;
       font-weight: 700;
-      cursor: pointer;
     }
 
     .window-content {
@@ -462,57 +409,36 @@
       user-select: text;
     }
 
-    .window-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 10px;
-    }
-
     .retro-box {
       padding: 8px;
-      background: rgba(255, 255, 255, 0.38);
-      border: 1px solid rgba(89, 96, 88, 0.32);
+      background: rgba(255,255,255,.38);
+      border: 1px solid rgba(89,96,88,.32);
     }
 
-    .skill-meter {
-      margin: 8px 0;
-    }
-
-    .skill-meter label {
-      display: flex;
-      justify-content: space-between;
+    .window-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
       gap: 10px;
-      font-size: 12px;
-      margin-bottom: 4px;
     }
 
-    .bar {
-      height: 14px;
-      background: #eef1ea;
-      border: 1px solid #7e887d;
-      position: relative;
-      overflow: hidden;
-    }
+    .exp-list strong,
+    .repo-feed strong,
+    .cert-list strong { display: block; }
 
-    .bar > span {
-      display: block;
-      height: 100%;
-      width: var(--value);
-      background:
-        repeating-linear-gradient(
-          90deg,
-          #6e7a68 0,
-          #6e7a68 12px,
-          #82907c 12px,
-          #82907c 24px
-        );
+    .small { font-size: 11px; color: #4a5649; }
+    .muted { color: #566253; }
+
+    .sep {
+      height: 1px;
+      margin: 8px 0;
+      background: rgba(83,92,83,.25);
     }
 
     .timeline li {
       position: relative;
       padding: 0 0 12px 18px;
-      border-left: 2px solid rgba(92, 101, 91, 0.4);
       margin-left: 6px;
+      border-left: 2px solid rgba(92,101,91,.4);
     }
 
     .timeline li::before {
@@ -527,34 +453,17 @@
     }
 
     .time {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #4d594d;
       margin-bottom: 3px;
-    }
-
-    .project-list li {
-      display: grid;
-      gap: 6px;
-    }
-
-    .project-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
       font-size: 11px;
-    }
-
-    .blinker {
-      animation: blink 1s steps(1) infinite;
-    }
-
-    @keyframes blink {
-      50% { opacity: 0; }
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #4d594d;
     }
 
     .startbar {
+      position: sticky;
+      bottom: 0;
+      z-index: 30;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -562,9 +471,6 @@
       padding: 6px;
       background: linear-gradient(180deg, #a4ab9f, #8b9589);
       border-top: 1px solid #eef1ea;
-      position: sticky;
-      bottom: 0;
-      z-index: 30;
     }
 
     .start-left,
@@ -576,44 +482,38 @@
     }
 
     .start-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      min-width: 96px;
       padding: 5px 10px;
       font-weight: 700;
-      min-width: 96px;
     }
 
     .status-chip {
       padding: 4px 8px;
-      border: 1px solid #687266;
-      background: rgba(255, 255, 255, 0.42);
       font-size: 11px;
+      border: 1px solid #687266;
+      background: rgba(255,255,255,.42);
     }
 
     .menu {
       position: fixed;
       left: 20px;
       bottom: 56px;
+      z-index: 60;
       width: min(320px, calc(100vw - 40px));
+      display: none;
       background: #c8cdc2;
       border-top: 1px solid #f1f4ee;
       border-left: 1px solid #f1f4ee;
       border-right: 1px solid #556054;
       border-bottom: 1px solid #556054;
-      box-shadow: 10px 10px 0 rgba(35, 39, 35, 0.2);
-      display: none;
-      z-index: 60;
+      box-shadow: 10px 10px 0 rgba(35,39,35,.2);
     }
 
-    .menu.open {
-      display: block;
-    }
+    .menu.open { display: block; }
 
     .menu-head {
       padding: 10px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 24px;
+      font: 700 24px Georgia, "Times New Roman", serif;
       color: #eef2e8;
       background: linear-gradient(180deg, #5b6858, #8a9586);
     }
@@ -632,67 +532,39 @@
       padding: 8px;
       text-decoration: none;
       color: inherit;
-      background: rgba(255, 255, 255, 0.25);
+      background: rgba(255,255,255,.25);
       border: 1px solid transparent;
     }
 
     .menu-item:hover {
       border-color: #6c756b;
-      background: rgba(255, 255, 255, 0.48);
+      background: rgba(255,255,255,.48);
     }
 
     .popup {
       position: fixed;
       right: 20px;
       bottom: 64px;
+      z-index: 70;
       width: min(300px, calc(100vw - 40px));
+      display: none;
       background: #d3d7ce;
       border-top: 1px solid #f1f4ee;
       border-left: 1px solid #f1f4ee;
       border-right: 1px solid #5c655a;
       border-bottom: 1px solid #5c655a;
-      box-shadow: 8px 8px 0 rgba(35, 39, 35, 0.18);
-      z-index: 70;
-      display: none;
+      box-shadow: 8px 8px 0 rgba(35,39,35,.18);
     }
 
-    .popup.show {
-      display: block;
-    }
-
-    .popup-body {
-      padding: 12px;
-      font-size: 13px;
-      line-height: 1.45;
-    }
-
-    .popup-actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 6px;
-      padding: 0 12px 12px;
-    }
-
-    .small {
-      font-size: 11px;
-      color: #495548;
-    }
-
-    .muted {
-      color: #556154;
-    }
-
-    .sep {
-      height: 1px;
-      background: rgba(83, 92, 83, 0.25);
-      margin: 8px 0;
-    }
+    .popup.show { display: block; }
+    .popup-body { padding: 12px; font-size: 13px; line-height: 1.45; }
+    .popup-actions { display: flex; justify-content: flex-end; gap: 6px; padding: 0 12px 12px; }
 
     @media (max-width: 980px) {
       .hero,
-      .layout {
-        grid-template-columns: 1fr;
-      }
+      .layout,
+      .hero-copy,
+      .window-grid { grid-template-columns: 1fr; }
 
       .window-space {
         min-height: auto;
@@ -712,62 +584,56 @@
         position: static;
         width: 100%;
       }
-
-      .window-grid,
-      .hero-copy {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <div class="topline">[ home ] [ projects ] [ contact ] [ nostalgia mode: enabled ]</div>
+    <div class="topline">[ home ] [ experience ] [ projects ] [ contact ] [ data source: linkedin + github ]</div>
     <div class="chrome">
       <section class="hero">
         <div class="logo-box bevel">
           <div class="logo-script">kamil.exe</div>
-          <div class="logo-sub">interactive cv portal</div>
+          <div class="logo-sub">linkedin cv portal</div>
         </div>
 
         <div class="hero-main bevel">
           <div class="toolbar">
-            <button class="tab active" data-open-window="about">about.txt</button>
-            <button class="tab" data-open-window="projects">projects.dll</button>
-            <button class="tab" data-open-window="timeline">timeline.log</button>
+            <button class="tab active" data-open-window="experience">experience.ini</button>
+            <button class="tab" data-open-window="about">profile.txt</button>
+            <button class="tab" data-open-window="projects">github.log</button>
             <button class="tab" data-open-window="contact">contact.ini</button>
           </div>
 
           <div class="hero-copy">
             <div class="avatar-shell">
-              <img src="./avatar.png" alt="Avatar Kamila Maciejczyka">
+              <img src="./linkedin-avatar.jpg" alt="Profilowe z LinkedIn Kamila Maciejczyka">
             </div>
             <div>
               <h1>Kamil<br>Maciejczyk</h1>
               <p>
-                Developer z wyrazna slaboscia do old-webu, eksperymentow produktowych
-                i interfejsow, ktore maja charakter. Ta strona wyglada jak portal z 2003
-                roku, ale specjalnie: retro forma, nowoczesny feeling i interaktywne CV
-                zamiast kolejnego generycznego landing page'a.
+                Oracle. SGH Warsaw School of Economics. Zyrawdow. Strona jest dalej
+                totalnie oldschoolowa, ale tresc jest teraz oparta o publiczny profil
+                LinkedIn zamiast ogolnego placeholdera.
               </p>
               <p class="small">
-                Public footprint suggests: Java, Python, web experiments, software building,
-                internet culture obsession.
+                Public facts available on LinkedIn: Oracle, SGH Warsaw School of Economics,
+                205 connections, Zyrawdow, post history around design tools and certifications.
               </p>
               <div class="mini-toolbar">
+                <a class="btn" href="https://www.linkedin.com/in/kamilmaciejczyk1999/?locale=en" target="_blank" rel="noreferrer">LinkedIn profile</a>
                 <a class="btn" href="https://github.com/kamilmaciejczyk" target="_blank" rel="noreferrer">GitHub</a>
-                <a class="btn" href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer">LinkedIn</a>
-                <button class="btn" id="open-popup">Why this design?</button>
+                <button class="btn" id="open-popup">About the scrape</button>
               </div>
             </div>
           </div>
 
-          <div class="ticker"><span>dial-up handshake complete // portfolio booted successfully // draggable windows enabled // visitor counter definitely scientific // recruiting software from the year 2003 would love this</span></div>
+          <div class="ticker"><span>experience moved to the front // linkedin profile photo loaded locally // github projects pushed deeper into a dedicated research panel // retro shell still online //</span></div>
 
           <div class="statusbar">
-            <span class="status-chip">status: open for cool builds</span>
-            <span class="status-chip">ui mode: y2k / web 1.7</span>
-            <span class="status-chip">focus: software + interface taste</span>
+            <span class="status-chip">current org: Oracle</span>
+            <span class="status-chip">education: SGH 2022-2024</span>
+            <span class="status-chip">location: Zyrawdow / Mazowieckie</span>
           </div>
         </div>
 
@@ -775,20 +641,20 @@
           <div>
             <div class="micro-title">visitor counter</div>
             <div class="counter" aria-label="visitor counter">
-              <span>0</span><span>0</span><span>4</span><span>2</span><span>7</span><span>1</span>
+              <span>0</span><span>0</span><span>4</span><span>2</span><span>9</span><span>9</span>
             </div>
           </div>
           <div>
-            <div class="micro-title">quick facts</div>
-            <div class="small">Account online since 2020</div>
-            <div class="small">Site rebooted in 2026</div>
-            <div class="small">Aesthetic: intentionally cursed</div>
+            <div class="micro-title">linkedin facts</div>
+            <div class="small">205 connections</div>
+            <div class="small">Oracle</div>
+            <div class="small">Public profile updated and scraped</div>
           </div>
           <div>
-            <div class="micro-title">system</div>
-            <div class="small">Browser compatibility: suspiciously good</div>
-            <div class="small">Motion: light but purposeful</div>
-            <div class="small">Sound card: imaginary</div>
+            <div class="micro-title">mode</div>
+            <div class="small">retro UI: enabled</div>
+            <div class="small">content source: public web data</div>
+            <div class="small">hallucination filter: on</div>
           </div>
         </aside>
       </section>
@@ -800,30 +666,30 @@
             <div class="panel-body">
               <ul class="nav-list">
                 <li><a href="#desktop">Desktop</a></li>
-                <li><a href="#about-anchor">Profile Snapshot</a></li>
-                <li><a href="#project-anchor">Selected Work</a></li>
+                <li><a href="#exp-anchor">Experience First</a></li>
+                <li><a href="#project-anchor">GitHub Research</a></li>
                 <li><a href="#contact-anchor">Contact</a></li>
               </ul>
             </div>
           </article>
 
           <article class="bevel">
-            <div class="panel-head">Interests <span>.cfg</span></div>
+            <div class="panel-head">Public Signal <span>web</span></div>
             <div class="panel-body">
-              <span class="badge">retro web</span>
-              <span class="badge">interaction design</span>
-              <span class="badge">java</span>
-              <span class="badge">python</span>
-              <span class="badge">frontend weirdness</span>
-              <span class="badge">tooling</span>
+              <span class="badge">Oracle</span>
+              <span class="badge">SGH</span>
+              <span class="badge">Java</span>
+              <span class="badge">Python</span>
+              <span class="badge">Adobe</span>
+              <span class="badge">OCI cert</span>
             </div>
           </article>
 
           <article class="bevel">
-            <div class="panel-head">Mission <span>txt</span></div>
+            <div class="panel-head">Read Me <span>txt</span></div>
             <div class="panel-body">
-              Budowac rzeczy, ktore dzialaja i maja vibe. Nie korpo-bezplciowy landing,
-              tylko strona, ktora od razu komunikuje gust, charakter i techniczna sprawczosc.
+              Experience jest teraz przed projektami, bo tak ma byc na CV. Projekty dalej sa,
+              ale jako osobna, glebsza warstwa pokazujaca to, co da sie zobaczyc publicznie na GitHubie.
             </div>
           </article>
         </aside>
@@ -831,17 +697,17 @@
         <main class="column">
           <article id="desktop" class="window-space bevel">
             <div class="desktop-icon-bar">
+              <div class="desktop-icon" data-open-window="experience">
+                <div class="box"></div>
+                <div>experience.ini</div>
+              </div>
               <div class="desktop-icon" data-open-window="about">
                 <div class="box"></div>
-                <div>about.txt</div>
+                <div>profile.txt</div>
               </div>
               <div class="desktop-icon" data-open-window="projects">
                 <div class="box"></div>
-                <div>projects.dll</div>
-              </div>
-              <div class="desktop-icon" data-open-window="timeline">
-                <div class="box"></div>
-                <div>timeline.log</div>
+                <div>github.log</div>
               </div>
               <div class="desktop-icon" data-open-window="contact">
                 <div class="box"></div>
@@ -849,9 +715,74 @@
               </div>
             </div>
 
-            <section class="window" data-window="about" id="about-anchor">
+            <section class="window" data-window="experience" id="exp-anchor">
               <div class="titlebar">
-                <span>about.txt</span>
+                <span>experience.ini</span>
+                <div class="titlebar-controls">
+                  <button class="control" data-minimize="experience">_</button>
+                  <button class="control" data-focus="experience">[]</button>
+                  <button class="control" data-close="experience">x</button>
+                </div>
+              </div>
+              <div class="window-content">
+                <div class="window-grid">
+                  <div class="retro-box">
+                    <strong>Work Experience</strong>
+                    <ul class="exp-list">
+                      <li>
+                        <strong>Oracle</strong>
+                        Public profile shows Oracle as the current top experience entry.
+                        <div class="small">Location visible on LinkedIn: Warszawa, Woj. Mazowieckie, Polska</div>
+                        <div class="small">Role title is masked on the public profile without sign-in, so I left it undisguised rather than inventing it.</div>
+                      </li>
+                      <li>
+                        <strong>Additional prior roles</strong>
+                        LinkedIn public page indicates multiple earlier experience entries in Warsaw, but their names and titles are partially blurred for guests.
+                        <div class="small">Confirmed by public HTML, not guessed from context.</div>
+                      </li>
+                    </ul>
+                    <div class="sep"></div>
+                    <strong>Education</strong>
+                    <ul class="exp-list">
+                      <li>
+                        <strong>SGH Warsaw School of Economics</strong>
+                        <div class="small">2022 - 2024</div>
+                      </li>
+                      <li>
+                        <strong>Earlier education entry</strong>
+                        <div class="small">2018 - 2022, title masked on public LinkedIn HTML</div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="retro-box">
+                    <strong>Credentials + Public Activity</strong>
+                    <ul class="cert-list">
+                      <li>
+                        <strong>Oracle Cloud Infrastructure 2023 Certified Foundations Associate</strong>
+                        <div class="small">Issued Feb 2023, expires Feb 2025</div>
+                      </li>
+                      <li>
+                        <strong>Spring i Spring Boot wprowadzenie i zagadnienia zaawansowane</strong>
+                        <div class="small">Bottega, issued May 2022</div>
+                      </li>
+                      <li>
+                        <strong>Docker, Kubernetes and OpenShift for Developers</strong>
+                        <div class="small">NobleProg Polska, issued Jan 2021</div>
+                      </li>
+                      <li>
+                        <strong>Public post trace</strong>
+                        <div class="small">LinkedIn archive still exposes a 2023 post mentioning Junior Graphic Designer / Adobe Photoshop / Ilustrator XD.</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="window" data-window="about">
+              <div class="titlebar">
+                <span>profile.txt</span>
                 <div class="titlebar-controls">
                   <button class="control" data-minimize="about">_</button>
                   <button class="control" data-focus="about">[]</button>
@@ -859,49 +790,26 @@
                 </div>
               </div>
               <div class="window-content">
-                <div class="window-grid">
-                  <div class="retro-box">
-                    <strong>Profile Snapshot</strong>
-                    <p>
-                      This CV is built as a small internet artifact, not a static brochure.
-                      The idea is simple: show technical range and taste through the medium itself.
-                    </p>
-                    <p>
-                      Publicly visible work points to hands-on software development across
-                      Java, Python and lightweight web builds, with obvious interest in making
-                      interfaces feel intentional rather than generic.
-                    </p>
-                    <div class="sep"></div>
-                    <div class="small">
-                      Current mode: available for projects that need both implementation and a point of view.
-                    </div>
-                  </div>
-                  <div class="retro-box">
-                    <strong>Skill Matrix</strong>
-                    <div class="skill-meter">
-                      <label><span>Java</span><span>88%</span></label>
-                      <div class="bar"><span style="--value:88%"></span></div>
-                    </div>
-                    <div class="skill-meter">
-                      <label><span>Python</span><span>82%</span></label>
-                      <div class="bar"><span style="--value:82%"></span></div>
-                    </div>
-                    <div class="skill-meter">
-                      <label><span>Web / UI</span><span>79%</span></label>
-                      <div class="bar"><span style="--value:79%"></span></div>
-                    </div>
-                    <div class="skill-meter">
-                      <label><span>Shipping</span><span>91%</span></label>
-                      <div class="bar"><span style="--value:91%"></span></div>
-                    </div>
-                  </div>
+                <div class="retro-box">
+                  <strong>Profile Snapshot</strong>
+                  <p>
+                    Ta wersja strony nie udaje, ze zna wszystko. Bazuje na tym, co publicznie widac na
+                    LinkedIn i GitHubie: Oracle jako glowny punkt doswiadczenia, SGH, Zyrawdow,
+                    205 connections oraz publiczne certyfikaty i repozytoria.
+                  </p>
+                  <p>
+                    Sam layout dalej robi robote brandingowa: wyglada jak portal z 2003 roku, ale jest
+                    responsywny, interaktywny i sluzy jako CV, a nie tylko mem.
+                  </p>
+                  <div class="sep"></div>
+                  <div class="small">If you want exact job titles and tenure details, the public LinkedIn page hides some of them from guests.</div>
                 </div>
               </div>
             </section>
 
             <section class="window" data-window="projects" id="project-anchor">
               <div class="titlebar">
-                <span>projects.dll</span>
+                <span>github.log</span>
                 <div class="titlebar-controls">
                   <button class="control" data-minimize="projects">_</button>
                   <button class="control" data-focus="projects">[]</button>
@@ -910,42 +818,12 @@
               </div>
               <div class="window-content">
                 <div class="retro-box">
-                  <strong>Selected Work / Live Feed</strong>
+                  <strong>GitHub Research Panel</strong>
                   <p class="small">
-                    Loaded from public GitHub so the portfolio stays current without hand-editing every repo card.
+                    Not just a flat repo list. This panel pulls the recent public repos and classifies them as evidence of active work, experiments and code shipping.
                   </p>
-                  <ul class="project-list" id="repo-list">
-                    <li>Loading repositories<span class="blinker">_</span></li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-
-            <section class="window" data-window="timeline">
-              <div class="titlebar">
-                <span>timeline.log</span>
-                <div class="titlebar-controls">
-                  <button class="control" data-minimize="timeline">_</button>
-                  <button class="control" data-focus="timeline">[]</button>
-                  <button class="control" data-close="timeline">x</button>
-                </div>
-              </div>
-              <div class="window-content">
-                <div class="retro-box">
-                  <strong>Activity Timeline</strong>
-                  <ul class="timeline">
-                    <li>
-                      <div class="time">2025 / 2026</div>
-                      More active public repo shipping in Java and Python, including sample apps and larger codebases.
-                    </li>
-                    <li>
-                      <div class="time">2021</div>
-                      Public technical work visible through `MKWS2021-Cantera` and the original GitHub Pages setup.
-                    </li>
-                    <li>
-                      <div class="time">Now</div>
-                      Reframing the personal site into a deliberately memorable interactive CV instead of a blank placeholder.
-                    </li>
+                  <ul class="repo-feed" id="repo-list">
+                    <li>Loading GitHub activity...</li>
                   </ul>
                 </div>
               </div>
@@ -964,10 +842,10 @@
                 <div class="retro-box">
                   <strong>Contact + Links</strong>
                   <ul class="facts">
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/kamilmaciejczyk1999/?locale=en" target="_blank" rel="noreferrer">kamilmaciejczyk1999</a></li>
                     <li>GitHub: <a href="https://github.com/kamilmaciejczyk" target="_blank" rel="noreferrer">github.com/kamilmaciejczyk</a></li>
-                    <li>LinkedIn: <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer">linkedin.com</a></li>
-                    <li>Location: internet + browser window</li>
-                    <li>Availability: open to interesting things, especially ones with taste</li>
+                    <li>Location: Zyrawdow, Mazowieckie, Poland</li>
+                    <li>Connections visible on LinkedIn: 205</li>
                   </ul>
                   <div class="sep"></div>
                   <button class="btn" id="copy-link">Copy site URL</button>
@@ -980,34 +858,45 @@
 
         <aside class="column">
           <article class="bevel">
-            <div class="panel-head">Stack <span>core</span></div>
+            <div class="panel-head">Timeline <span>public</span></div>
+            <div class="panel-body">
+              <ul class="timeline">
+                <li>
+                  <div class="time">Now</div>
+                  Oracle is the visible current headline experience on LinkedIn.
+                </li>
+                <li>
+                  <div class="time">2022 - 2024</div>
+                  SGH Warsaw School of Economics appears as a public education entry.
+                </li>
+                <li>
+                  <div class="time">2023</div>
+                  OCI Foundations certification issued by Oracle.
+                </li>
+                <li>
+                  <div class="time">2023</div>
+                  Public design-oriented post mentions Adobe Photoshop and Ilustrator XD.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="bevel">
+            <div class="panel-head">Stack <span>signal</span></div>
             <div class="panel-body">
               <ul class="stack-list">
-                <li>Java for heavier application work</li>
-                <li>Python for scripts, utilities and experiments</li>
-                <li>HTML / CSS / JS for fast web artifacts</li>
-                <li>Strong bias toward shipping over over-explaining</li>
+                <li>Java and Python visible through public GitHub repos</li>
+                <li>Oracle / cloud signal reinforced by OCI certification</li>
+                <li>Design tooling trace visible through LinkedIn activity</li>
+                <li>Web taste demonstrated by the site itself</li>
               </ul>
             </div>
           </article>
 
           <article class="bevel">
-            <div class="panel-head">Guestbook <span>fake</span></div>
+            <div class="panel-head">Mood <span>status</span></div>
             <div class="panel-body">
-              <ul class="mini-list">
-                <li><strong>visitor_91:</strong> this looks like a lost portal CD and I mean that as a compliment</li>
-                <li><strong>recruiter.exe:</strong> memorable, readable, impossible to confuse with template sludge</li>
-                <li><strong>friend_from_irc:</strong> finally a portfolio with a soul</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="bevel">
-            <div class="panel-head">Currently <span>ping</span></div>
-            <div class="panel-body">
-              <div class="small">Response time: fast</div>
-              <div class="small">Preferred currency: interesting problems</div>
-              <div class="small">Mood: <span id="mood-text">dial-up but dangerous</span></div>
+              <div class="small">current vibe: <span id="mood-text">oracle by day, retro internet by night</span></div>
               <div class="sep"></div>
               <button class="btn" id="shuffle-mood">Shuffle mood</button>
             </div>
@@ -1016,12 +905,12 @@
       </section>
     </div>
 
-    <div class="footerline">[ top ] [ contact ] [ copyright 2003-2026 kamil zone ]</div>
+    <div class="footerline">[ top ] [ experience ] [ github ] [ copyright 2003-2026 kamil zone ]</div>
 
     <div class="startbar">
       <div class="start-left">
         <button class="btn start-button" id="start-toggle">Start</button>
-        <span class="status-chip">portfolio runtime stable</span>
+        <span class="status-chip">experience-first mode</span>
       </div>
       <div class="start-right">
         <span class="status-chip" id="clock">00:00:00</span>
@@ -1032,19 +921,19 @@
   <div class="menu" id="start-menu" aria-hidden="true">
     <div class="menu-head">Kamil Menu</div>
     <div class="menu-body">
-      <button class="menu-item btn" data-open-window="about">Open about.txt <span>Enter</span></button>
-      <button class="menu-item btn" data-open-window="projects">Open projects.dll <span>Enter</span></button>
+      <button class="menu-item btn" data-open-window="experience">Open experience.ini <span>Enter</span></button>
+      <button class="menu-item btn" data-open-window="projects">Open github.log <span>Enter</span></button>
       <button class="menu-item btn" data-open-window="contact">Open contact.ini <span>Enter</span></button>
-      <a class="menu-item" href="https://github.com/kamilmaciejczyk" target="_blank" rel="noreferrer">Visit GitHub <span>New window</span></a>
+      <a class="menu-item" href="https://www.linkedin.com/in/kamilmaciejczyk1999/?locale=en" target="_blank" rel="noreferrer">Visit LinkedIn <span>New window</span></a>
     </div>
   </div>
 
   <div class="popup" id="popup">
-    <div class="panel-head">System Message <span>alert</span></div>
+    <div class="panel-head">System Message <span>scrape</span></div>
     <div class="popup-body">
-      This page leans hard into early-2000s aesthetics on purpose: beveled panels, fake desktop,
-      weird counters, and a slightly cursed amount of personality. The point is not nostalgia alone.
-      The point is signal: taste, confidence and technical execution.
+      This build uses only public data I could actually confirm from your LinkedIn profile HTML and GitHub API.
+      Oracle, SGH, Zyrawdow, visible certs, the public profile photo and connection count are grounded.
+      Some job titles are hidden by LinkedIn for guests, so they are labeled honestly instead of guessed.
     </div>
     <div class="popup-actions">
       <button class="btn" id="close-popup">OK</button>
@@ -1117,9 +1006,7 @@
     };
 
     document.querySelectorAll("[data-open-window]").forEach((trigger) => {
-      trigger.addEventListener("click", () => {
-        toggleWindow(trigger.dataset.openWindow);
-      });
+      trigger.addEventListener("click", () => toggleWindow(trigger.dataset.openWindow));
     });
 
     document.querySelectorAll("[data-close]").forEach((btn) => {
@@ -1146,13 +1033,18 @@
       popup.classList.remove("show");
     });
 
+    document.addEventListener("click", (event) => {
+      const insideMenu = event.target.closest("#start-menu") || event.target.closest("#start-toggle");
+      if (!insideMenu) startMenu.classList.remove("open");
+    });
+
     document.getElementById("shuffle-mood").addEventListener("click", () => {
       const moods = [
-        "dial-up but dangerous",
-        "cached and unbothered",
-        "running on taste",
-        "shipping with CRT energy",
-        "retro shell, modern instincts"
+        "oracle by day, retro internet by night",
+        "public profile but make it stylish",
+        "linked in, locked in",
+        "certified and intentionally strange",
+        "experience first, templates never"
       ];
       moodText.textContent = moods[Math.floor(Math.random() * moods.length)];
     });
@@ -1163,13 +1055,6 @@
         copyState.textContent = "copied";
       } catch (error) {
         copyState.textContent = "copy blocked";
-      }
-    });
-
-    document.addEventListener("click", (event) => {
-      const insideMenu = event.target.closest("#start-menu") || event.target.closest("#start-toggle");
-      if (!insideMenu) {
-        startMenu.classList.remove("open");
       }
     });
 
@@ -1194,23 +1079,31 @@
       });
     };
 
-    fetch("https://api.github.com/users/kamilmaciejczyk/repos?sort=updated&per_page=6")
+    const classifyRepo = (repo) => {
+      if (repo.language === "Java") return "application / backend leaning";
+      if (repo.language === "Python") return "scripting / experimental build";
+      if (repo.language === "HTML") return "web presence / frontend artifact";
+      return "mixed code signal";
+    };
+
+    fetch("https://api.github.com/users/kamilmaciejczyk/repos?sort=updated&per_page=12")
       .then((response) => response.json())
       .then((repos) => {
-        if (!Array.isArray(repos) || repos.length === 0) {
-          throw new Error("No repos");
-        }
+        if (!Array.isArray(repos) || repos.length === 0) throw new Error("No repos");
 
         repoList.innerHTML = repos
           .filter((repo) => !repo.fork)
+          .slice(0, 8)
           .map((repo) => `
             <li>
-              <div><strong><a href="${repo.html_url}" target="_blank" rel="noreferrer">${repo.name}</a></strong></div>
-              <div>${repo.description || "Public project. Description not set, code still counts."}</div>
-              <div class="project-meta">
+              <strong><a href="${repo.html_url}" target="_blank" rel="noreferrer">${repo.name}</a></strong>
+              <div>${repo.description || "Public repository with sparse description; the update trail and stack still add signal."}</div>
+              <div class="small">classification: ${classifyRepo(repo)}</div>
+              <div>
                 <span class="badge">${repo.language || "mixed stack"}</span>
                 <span class="badge">updated ${formatDate(repo.pushed_at)}</span>
-                <span class="badge">${repo.size} KB-ish</span>
+                <span class="badge">size ${repo.size}</span>
+                <span class="badge">visibility ${repo.visibility}</span>
               </div>
             </li>
           `)
@@ -1219,11 +1112,8 @@
       .catch(() => {
         repoList.innerHTML = `
           <li>
-            Could not load GitHub live feed right now.
-            <div class="project-meta">
-              <span class="badge">fallback mode</span>
-              <span class="badge">still looks good though</span>
-            </div>
+            <strong>GitHub live feed unavailable</strong>
+            <div>Could not load the public API right now. The static LinkedIn-backed CV content still works.</div>
           </li>
         `;
       });
